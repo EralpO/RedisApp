@@ -1,21 +1,21 @@
 <h3>Add Users</h3>
 {{#if error}} <div>{{error}} </div> {{/if}}
-<form method="POST" action="/user/search">
+<form method="POST" action="/user/add">
 <div class="form-group">
     <label>FirstName</label>
-   <input class="form-control" type="text" placeholder="Name" name="name">
+   <input class="form-control" type="text" placeholder="Name" name="FirstName">
 </div>
 <div class="form-group">
     <label>LastName</label>
-   <input class="form-control" type="text" placeholder="LastName" name="lastname">
+   <input class="form-control" type="text" placeholder="LastName" name="LastName">
 </div>
 <div class="form-group">
     <label>Email</label>
-   <input class="form-control" type="text" placeholder="Email" name="email">
+   <input class="form-control" type="text" placeholder="Email" name="Email">
 </div>
 <div class="form-group">
     <label>Age</label>
-   <input class="form-control" type="text" placeholder="Age" name="age">
+   <input class="form-control" type="text" placeholder="Age" name="Age">
 </div>
-<input style="margin-left:20px;" type="submit" class="btn btn-primary" value="Search">
+<input style="margin-left:20px;" type="submit" class="btn btn-primary" value="Add">
 </form>

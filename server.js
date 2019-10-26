@@ -27,10 +27,35 @@ app.use(override('_method'));
 app.get('/',(req,res)=>{
     res.render('searchusers');
 });
-
+// Add User Page
 app.get('/user/add',(req,res)=>{
     res.render('adduser')
-})
+});
+
+// Add User Procesing
+app.post('/user/add',(req,res,next)=>{
+    let FirstName= req.body.FirstName;
+    let LastName = req.body.LastName;
+    let Age = req.body.Age;
+    let Email = req.body.Email;
+
+    client.hmset(FirstName,[
+        'FirstName',FirstName,
+        'LastName',LastName,
+        'Age',Age,
+        'Email',Email
+    ],(err,reply) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(reply);
+            res.redirect('/');
+        }
+    }
+    )
+});
+
 
 
 //Search Processing
